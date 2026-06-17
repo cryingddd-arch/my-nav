@@ -23,7 +23,7 @@
         .container {
             text-align: center;
             padding: 40px;
-            max-width: 1200px;
+            max-width: 1400px;
             width: 100%;
         }
 
@@ -92,14 +92,24 @@
             background: linear-gradient(135deg, #e8f4ff 0%, #d0e8ff 100%);
         }
 
-        /* 右侧按钮样式 - 紫色系 */
-        .right-column .nav-btn {
+        /* 中间按钮样式 - 紫色系 */
+        .middle-column .nav-btn {
             background: linear-gradient(135deg, #fff 0%, #f0e8ff 100%);
             color: #8a5fd9;
         }
 
-        .right-column .nav-btn:hover {
+        .middle-column .nav-btn:hover {
             background: linear-gradient(135deg, #f0e8ff 0%, #e0d0ff 100%);
+        }
+
+        /* 右侧按钮样式 - 青绿色系 */
+        .right-column .nav-btn {
+            background: linear-gradient(135deg, #fff 0%, #e8fff4 100%);
+            color: #2db37d;
+        }
+
+        .right-column .nav-btn:hover {
+            background: linear-gradient(135deg, #e8fff4 0%, #d0ffe8 100%);
         }
 
         /* 集成板按钮特殊样式 */
@@ -121,6 +131,13 @@
         }
 
         /* 响应式布局 */
+        @media (max-width: 992px) {
+            .nav-buttons {
+                flex-wrap: wrap;
+                gap: 40px;
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-buttons {
                 flex-direction: column;
@@ -143,7 +160,7 @@
     <div class="container">
         <h1>🚀 专利申请辅助工作流集合</h1>
         <div class="nav-buttons">
-            <!-- 左侧列 -->
+            <!-- 左侧列 - 专利申请 -->
             <div class="column left-column">
                 <h2 class="column-title">📝 专利申请</h2>
                 
@@ -184,8 +201,8 @@
                 </div>
             </div>
 
-            <!-- 右侧列 -->
-            <div class="column right-column">
+            <!-- 中间列 - 答复审查意见 -->
+            <div class="column middle-column">
                 <h2 class="column-title">💬 答复审查意见</h2>
                 
                 <div class="btn-wrapper">
@@ -213,6 +230,20 @@
                         ✏️ 答复审查意见[撰写]
                     </a>
                     <p class="description">撰写答复意见</p>
+                </div>
+            </div>
+
+            <!-- 右侧列 - 腾讯监控 -->
+            <div class="column right-column">
+                <h2 class="column-title">📊 腾讯监控</h2>
+                
+                <div class="btn-wrapper">
+                    <a href="https://brainmaker.netease.com/v3?model=workFlow_c69793fd-e712-4fa1-aa20-8a19415fc28e" 
+                       class="nav-btn integrated" 
+                       target="_blank">
+                        📈 腾讯监控
+                    </a>
+                    <p class="description">腾讯专利监控工具</p>
                 </div>
             </div>
         </div>
