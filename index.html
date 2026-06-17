@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的导航页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+        }
+
+        h1 {
+            color: white;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-btn {
+            display: inline-block;
+            padding: 20px 40px;
+            font-size: 1.2rem;
+            color: #667eea;
+            background: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            min-width: 200px;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            background: #f8f9fa;
+        }
+
+        .nav-btn:active {
+            transform: translateY(-2px);
+        }
+
+        .nav-btn.btn-1 {
+            background: linear-gradient(135deg, #fff 0%, #e8f4ff 100%);
+        }
+
+        .nav-btn.btn-2 {
+            background: linear-gradient(135deg, #fff 0%, #f0e8ff 100%);
+        }
+
+        .description {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        .btn-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 我的导航页</h1>
+        <div class="nav-buttons">
+            <div class="btn-wrapper">
+                <a href="https://brainmaker.netease.com/v3?model=chatFlow_1a13a641-612d-4169-a7a4-c41eb36b7658" 
+                   class="nav-btn btn-1" 
+                   target="_blank">
+                    📌 链接一
+                </a>
+                <p class="description">ChatFlow 应用 1</p>
+            </div>
+            <div class="btn-wrapper">
+                <a href="https://brainmaker.netease.com/v3?model=chatFlow_d96421bb-4299-421a-8502-564aa7145d7e" 
+                   class="nav-btn btn-2" 
+                   target="_blank">
+                    📌 链接二
+                </a>
+                <p class="description">ChatFlow 应用 2</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
