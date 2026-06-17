@@ -23,6 +23,8 @@
         .container {
             text-align: center;
             padding: 40px;
+            max-width: 1200px;
+            width: 100%;
         }
 
         h1 {
@@ -34,15 +36,30 @@
 
         .nav-buttons {
             display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
+            gap: 60px;
             justify-content: center;
+            align-items: flex-start;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .column-title {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
         }
 
         .nav-btn {
             display: inline-block;
-            padding: 20px 40px;
-            font-size: 1.2rem;
+            padding: 18px 30px;
+            font-size: 1.1rem;
             color: #667eea;
             background: white;
             border: none;
@@ -51,7 +68,8 @@
             text-decoration: none;
             transition: all 0.3s ease;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            min-width: 200px;
+            min-width: 280px;
+            text-align: center;
         }
 
         .nav-btn:hover {
@@ -64,18 +82,30 @@
             transform: translateY(-2px);
         }
 
-        .nav-btn.btn-1 {
+        /* 左侧按钮样式 - 蓝色系 */
+        .left-column .nav-btn {
             background: linear-gradient(135deg, #fff 0%, #e8f4ff 100%);
+            color: #4a90d9;
         }
 
-        .nav-btn.btn-2 {
+        .left-column .nav-btn:hover {
+            background: linear-gradient(135deg, #e8f4ff 0%, #d0e8ff 100%);
+        }
+
+        /* 右侧按钮样式 - 紫色系 */
+        .right-column .nav-btn {
             background: linear-gradient(135deg, #fff 0%, #f0e8ff 100%);
+            color: #8a5fd9;
         }
 
-        .description {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 0.9rem;
-            margin-top: 10px;
+        .right-column .nav-btn:hover {
+            background: linear-gradient(135deg, #f0e8ff 0%, #e0d0ff 100%);
+        }
+
+        /* 集成板按钮特殊样式 */
+        .nav-btn.integrated {
+            font-weight: bold;
+            border: 2px solid rgba(102, 126, 234, 0.3);
         }
 
         .btn-wrapper {
@@ -83,27 +113,107 @@
             flex-direction: column;
             align-items: center;
         }
+
+        .description {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85rem;
+            margin-top: 8px;
+        }
+
+        /* 响应式布局 */
+        @media (max-width: 768px) {
+            .nav-buttons {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .nav-btn {
+                min-width: 260px;
+                padding: 15px 25px;
+                font-size: 1rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🚀 我的导航页</h1>
+        <h1>🚀 专利申请辅助工作流集合</h1>
         <div class="nav-buttons">
-            <div class="btn-wrapper">
-                <a href="https://brainmaker.netease.com/v3?model=chatFlow_ec271190-b13d-4aed-86be-07894892c83b" 
-                   class="nav-btn btn-1" 
-                   target="_blank">
-                    📌 答复审查意见[审核]
-                </a>
-                <p class="description">ChatFlow 应用 1</p>
+            <!-- 左侧列 -->
+            <div class="column left-column">
+                <h2 class="column-title">📝 专利申请</h2>
+                
+                <div class="btn-wrapper">
+                    <a href="https://brainmaker.netease.com/v3?model=chatFlow_93573c47-c682-4684-b81c-77e6e197c308" 
+                       class="nav-btn integrated" 
+                       target="_blank">
+                        🔧 专利申请辅助工具（集成板）
+                    </a>
+                    <p class="description">一站式专利申请辅助</p>
+                </div>
+
+                <div class="btn-wrapper">
+                    <a href="https://brainmaker.netease.com/v3?model=chatFlow_3813aef1-eaf9-41a5-9214-c5efa46588c8" 
+                       class="nav-btn" 
+                       target="_blank">
+                        ✅ 权利要求审核
+                    </a>
+                    <p class="description">审核权利要求书</p>
+                </div>
+
+                <div class="btn-wrapper">
+                    <a href="https://brainmaker.netease.com/v3?model=chatFlow_e22ffd27-16c7-4ea6-a3a2-f073c4146cf2" 
+                       class="nav-btn" 
+                       target="_blank">
+                        ✍️ 权利要求撰写
+                    </a>
+                    <p class="description">撰写权利要求书</p>
+                </div>
+
+                <div class="btn-wrapper">
+                    <a href="https://brainmaker.netease.com/v3?model=chatFlow_c781e80b-dac0-49b4-b2db-dce14972c758" 
+                       class="nav-btn" 
+                       target="_blank">
+                        📄 说明书撰写
+                    </a>
+                    <p class="description">撰写专利说明书</p>
+                </div>
             </div>
-            <div class="btn-wrapper">
-                <a href="https://brainmaker.netease.com/v3?model=chatFlow_70cae461-ca98-412e-8c55-e833e4914692" 
-                   class="nav-btn btn-2" 
-                   target="_blank">
-                    📌 答复审查意见[撰写]
-                </a>
-                <p class="description">ChatFlow 应用 2</p>
+
+            <!-- 右侧列 -->
+            <div class="column right-column">
+                <h2 class="column-title">💬 答复审查意见</h2>
+                
+                <div class="btn-wrapper">
+                    <a href="https://brainmaker.netease.com/v3?model=chatFlow_70ad559a-49b8-4f38-801f-b7897e0490a0" 
+                       class="nav-btn integrated" 
+                       target="_blank">
+                        🔧 答复审查意见（集成板）
+                    </a>
+                    <p class="description">一站式答复审查意见</p>
+                </div>
+
+                <div class="btn-wrapper">
+                    <a href="https://brainmaker.netease.com/v3?model=chatFlow_ec271190-b13d-4aed-86be-07894892c83b" 
+                       class="nav-btn" 
+                       target="_blank">
+                        🔍 答复审查意见[审核]
+                    </a>
+                    <p class="description">审核答复意见</p>
+                </div>
+
+                <div class="btn-wrapper">
+                    <a href="https://brainmaker.netease.com/v3?model=chatFlow_70cae461-ca98-412e-8c55-e833e4914692" 
+                       class="nav-btn" 
+                       target="_blank">
+                        ✏️ 答复审查意见[撰写]
+                    </a>
+                    <p class="description">撰写答复意见</p>
+                </div>
             </div>
         </div>
     </div>
