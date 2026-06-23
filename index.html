@@ -188,6 +188,7 @@
             color: rgba(255, 255, 255, 0.7);
             font-size: 0.8rem;
             margin-top: 6px;
+            text-align: left;
         }
 
         /* 添加按钮 */
@@ -416,7 +417,7 @@
                 title: '📊 腾讯监控',
                 colorIdx: 2,
                 buttons: [
-                    { id: 'b8', name: '📈 腾讯监控', url: 'https://brainmaker.netease.com/v3?model=workFlow_c69793fd-e712-4fa1-aa20-8a19415fc28e', desc: '腾讯专利监控工具', integrated: true },
+                    { id: 'b8', name: '📈 腾讯监控', url: 'https://brainmaker.netease.com/v3?model=workFlow_c69793fd-e712-4fa1-aa20-8a19415fc28e', desc: '1.针对权利要求和说明书进行发明点提取\n2.仅针对说明书进行发明点提取', integrated: true },
                 ]
             },
             {
@@ -522,9 +523,14 @@
             wrapper.appendChild(actions);
 
             if (btn.desc) {
-                const descEl = document.createElement('p');
+                const descEl = document.createElement('div');
                 descEl.className = 'description';
-                descEl.textContent = btn.desc;
+                btn.desc.split('\n').forEach(line => {
+                    const span = document.createElement('span');
+                    span.textContent = line;
+                    span.style.display = 'block';
+                    descEl.appendChild(span);
+                });
                 wrapper.appendChild(descEl);
             }
 
