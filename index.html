@@ -35,46 +35,6 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
 
-        .top-toolbar {
-            margin-bottom: 30px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .edit-toggle {
-            padding: 10px 24px;
-            font-size: 0.95rem;
-            border-radius: 20px;
-            border: 2px solid rgba(255,255,255,0.5);
-            background: rgba(255,255,255,0.12);
-            color: rgba(255,255,255,0.85);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .edit-toggle:hover {
-            background: rgba(255,255,255,0.25);
-            border-color: rgba(255,255,255,0.8);
-        }
-        .edit-toggle.active {
-            background: rgba(255,255,255,0.3);
-            border-color: white;
-            color: white;
-            box-shadow: 0 0 12px rgba(255,255,255,0.3);
-        }
-
-        .edit-only {
-            display: none !important;
-        }
-        body.editing .edit-only {
-            display: flex !important;
-        }
-        body.editing .btn-wrapper .btn-actions {
-            display: none !important;
-        }
-        body.editing .btn-wrapper:hover .btn-actions {
-            display: flex !important;
-        }
-
         .nav-buttons {
             display: flex;
             gap: 40px;
@@ -107,22 +67,6 @@
             border-bottom: 2px solid rgba(255, 255, 255, 0.3);
             flex: 1;
             text-align: center;
-        }
-
-        .column-title-input {
-            background: rgba(255,255,255,0.15);
-            border: 1px solid rgba(255,255,255,0.3);
-            color: white;
-            font-size: 1.3rem;
-            text-align: center;
-            padding: 6px 10px;
-            border-radius: 8px;
-            width: 100%;
-            outline: none;
-        }
-        .column-title-input:focus {
-            border-color: rgba(255,255,255,0.6);
-            background: rgba(255,255,255,0.25);
         }
 
         .nav-btn {
@@ -159,167 +103,12 @@
             position: relative;
         }
 
-        .btn-actions {
-            display: none;
-            position: absolute;
-            top: -8px;
-            right: 10px;
-            gap: 4px;
-        }
-    
-        .btn-action {
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            border: none;
-            cursor: pointer;
-            font-size: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            transition: transform 0.2s;
-        }
-        .btn-action:hover { transform: scale(1.15); }
-        .btn-action.edit-btn { background: rgba(102,126,234,0.85); }
-        .btn-action.del-btn { background: rgba(220,80,80,0.85); }
-
         .description {
             color: rgba(255, 255, 255, 0.7);
             font-size: 0.8rem;
             margin-top: 6px;
             text-align: left;
         }
-
-        /* 添加按钮 */
-        .add-btn {
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            padding: 12px 24px;
-            font-size: 1rem;
-            color: rgba(255,255,255,0.85);
-            background: rgba(255,255,255,0.12);
-            border: 2px dashed rgba(255,255,255,0.35);
-            border-radius: 12px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            min-width: 260px;
-        }
-        .add-btn:hover {
-            background: rgba(255,255,255,0.22);
-            border-color: rgba(255,255,255,0.6);
-            color: white;
-        }
-
-        .add-column-btn {
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            padding: 18px 28px;
-            font-size: 1.05rem;
-            color: rgba(255,255,255,0.9);
-            background: rgba(255,255,255,0.15);
-            border: 2px dashed rgba(255,255,255,0.5);
-            border-radius: 14px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            min-width: 300px;
-            align-self: flex-start;
-            margin-top: 0;
-        }
-        .add-column-btn:hover {
-            background: rgba(255,255,255,0.28);
-            border-color: rgba(255,255,255,0.8);
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-
-        /* 弹窗 */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.55);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-        .modal-overlay.active { display: flex; }
-
-        .modal {
-            background: white;
-            border-radius: 16px;
-            padding: 30px;
-            width: 420px;
-            max-width: 90vw;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            text-align: left;
-        }
-        .modal h3 {
-            margin-bottom: 20px;
-            color: #333;
-            font-size: 1.2rem;
-        }
-        .modal label {
-            display: block;
-            font-size: 0.9rem;
-            color: #555;
-            margin-bottom: 6px;
-            margin-top: 14px;
-        }
-        .modal input {
-            width: 100%;
-            padding: 10px 14px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 1rem;
-            outline: none;
-            transition: border-color 0.2s;
-        }
-        .modal input:focus { border-color: #667eea; }
-        .modal-actions {
-            display: flex;
-            gap: 10px;
-            justify-content: flex-end;
-            margin-top: 22px;
-        }
-        .modal-btn {
-            padding: 10px 22px;
-            border-radius: 8px;
-            border: none;
-            font-size: 0.95rem;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        .modal-btn.primary {
-            background: #667eea;
-            color: white;
-        }
-        .modal-btn.primary:hover { background: #5568d9; }
-        .modal-btn.secondary {
-            background: #f0f0f0;
-            color: #555;
-        }
-        .modal-btn.secondary:hover { background: #e0e0e0; }
-
-        /* 颜色选择器 */
-        .color-presets {
-            display: flex;
-            gap: 8px;
-            margin-top: 8px;
-            flex-wrap: wrap;
-        }
-        .color-dot {
-            width: 28px; height: 28px;
-            border-radius: 50%;
-            cursor: pointer;
-            border: 2px solid transparent;
-            transition: transform 0.2s, border-color 0.2s;
-        }
-        .color-dot:hover { transform: scale(1.15); }
-        .color-dot.selected { border-color: #333; }
 
         /* 响应式 */
         @media (max-width: 992px) {
@@ -328,8 +117,6 @@
         @media (max-width: 768px) {
             .nav-buttons { flex-direction: column; align-items: center; }
             .nav-btn { min-width: 240px; padding: 14px 20px; font-size: 0.95rem; }
-            .add-btn { min-width: 240px; }
-            .add-column-btn { min-width: 240px; }
             h1 { font-size: 1.8rem; }
         }
     </style>
@@ -337,44 +124,8 @@
 <body>
     <div class="container">
         <h1>🚀 专利申请辅助工作流集合</h1>
-        <div class="top-toolbar">
-            <button class="edit-toggle" id="editToggle" onclick="toggleEdit()">✏️ 编辑模式</button>
-        </div>
         <div class="nav-buttons" id="navButtons">
             <!-- 列由JS动态渲染 -->
-        </div>
-    </div>
-
-    <!-- 弹窗：添加/编辑按钮 -->
-    <div class="modal-overlay" id="btnModalOverlay">
-        <div class="modal">
-            <h3 id="btnModalTitle">添加按钮</h3>
-            <label>按钮名称</label>
-            <input type="text" id="btnNameInput" placeholder="输入按钮显示名称">
-            <label>链接地址</label>
-            <input type="text" id="btnUrlInput" placeholder="https://...">
-            <label>描述文字（可选）</label>
-            <input type="text" id="btnDescInput" placeholder="按钮下方的描述">
-            <div class="modal-actions">
-                <button class="modal-btn secondary" onclick="closeBtnModal()">取消</button>
-                <button class="modal-btn primary" id="btnModalConfirm">确认</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- 弹窗：添加/编辑列 -->
-    <div class="modal-overlay" id="colModalOverlay">
-        <div class="modal">
-            <h3 id="colModalTitle">新增列</h3>
-            <label>列名称</label>
-            <input type="text" id=""colNameInput" placeholder="输入列标题">
-            <label>主题色</label>
-            <div class="color-presets" id="colorPresets">
-            </div>
-            <div class="modal-actions">
-                <button class="modal-btn secondary" onclick="closeColModal()">取消</button>
-                <button class="modal-btn primary" id="colModalConfirm">确认</button>
-            </div>
         </div>
     </div>
 
@@ -400,7 +151,7 @@
                     { id: 'b2', name: '✅ 权利要求审核', url: 'https://brainmaker.netease.com/v3?model=chatFlow_3813aef1-eaf9-41a5-9214-c5efa46588c8', desc: '1.审核权利要求书\n2.追问进一步修改', integrated: false },
                     { id: 'b3', name: '✍️ 权利要求撰写', url: 'https://brainmaker.netease.com/v3?model=chatFlow_e22ffd27-16c7-4ea6-a3a2-f073c4146cf2', desc: '1.理解技术交底书\n2.撰写权利要求书', integrated: false },
                     { id: 'b4', name: '📄 说明书撰写', url: 'https://brainmaker.netease.com/v3?model=chatFlow_c781e80b-dac0-49b4-b2db-dce14972c758', desc: '1.撰写专利说明书\n2.撰写特定权利要求实施例\n3.撰写特定技术特征元素实施例\n4.撰写背景技术\n5.交互式修改撰写背景技术', integrated: false },
-                    { id: 'b11', name: '🤖 一键去AI味', url: 'https://brainmaker.netease.com/v3?model=chatFlow_04b4785a-003e-4ecf-bcea-810eddc9472c', desc: '一键去除文本中的AI生成痕迹', integrated: false },
+                    { id: 'b11', name: '🪄 一键去AI味（新增）', url: 'https://brainmaker.netease.com/v3?model=chatFlow_04b4785a-003e-4ecf-bcea-810eddc9472c', desc: '一键去除AI生成痕迹', integrated: false },
                 ]
             },
             {
@@ -432,24 +183,6 @@
             },
         ];
 
-        let idCounter = 100;
-        let editing = false;
-
-        function genId() { return 'el_' + (idCounter++); }
-
-        function toggleEdit() {
-            editing = !editing;
-            if (editing) {
-                document.body.classList.add('editing');
-                document.getElementById('editToggle').classList.add('active');
-                document.getElementById('editToggle').textContent = '✅ 退出编辑';
-            } else {
-                document.body.classList.remove('editing');
-                document.getElementById('editToggle').classList.remove('active');
-                document.getElementById('editToggle').textContent = '✏️ 编辑模式';
-            }
-        }
-
         // ============ 渲染 ============
 
         function renderAll() {
@@ -461,17 +194,12 @@
                 const colDiv = document.createElement('div');
                 colDiv.className = 'column';
                 colDiv.dataset.colId = col.id;
-                colDiv.style.setProperty('--btn-bg', scheme.btnBg);
-                colDiv.style.setProperty('--btn-bg-hover', scheme.btnBgHover);
-                colDiv.style.setProperty('--btn-color', scheme.btnColor);
 
                 // 列头
                 const header = document.createElement('div');
                 header.className = 'column-header';
                 header.innerHTML = `
                     <h2 class="column-title" id="title_${col.id}">${col.title}</h2>
-                    <button class="btn-action edit-btn edit-only" title="编辑列" onclick="editColumn('${col.id}')">✎</button>
-                    <button class="btn-action del-btn edit-only" title="删除列" style="background:rgba(220,80,80,0.7)" onclick="deleteColumn('${col.id}')">✕</button>
                 `;
                 colDiv.appendChild(header);
 
@@ -480,22 +208,8 @@
                     colDiv.appendChild(createBtnWrapper(btn, col.id));
                 });
 
-                // 添加按钮入口
-                const addBtn = document.createElement('button');
-                addBtn.className = 'add-btn edit-only';
-                addBtn.innerHTML = '➕ 添加按钮';
-                addBtn.onclick = () => openBtnModal(null, col.id);
-                colDiv.appendChild(addBtn);
-
                 container.appendChild(colDiv);
             });
-
-            // 最右侧：添加列按钮
-            const addCol = document.createElement('button');
-            addCol.className = 'add-column-btn edit-only';
-            addCol.innerHTML = '➕ 新增列';
-            addCol.onclick = () => openColModal(null);
-            container.appendChild(addCol);
 
             applyColumnStyles();
         }
@@ -510,18 +224,8 @@
             a.className = 'nav-btn' + (btn.integrated ? ' integrated' : '');
             a.target = '_blank';
             a.textContent = btn.name;
-            a.style.background = 'var(--btn-bg)';
-            a.style.color = 'var(--btn-color)';
-
-            const actions = document.createElement('div');
-            actions.className = 'btn-actions edit-only';
-            actions.innerHTML = `
-                <button class="btn-action edit-btn" onclick="event.preventDefault(); openBtnModal('${btn.id}', '${colId}')">✎</button>
-                <button class="btn-action del-btn" onclick="event.preventDefault(); deleteBtn('${colId}', '${btn.id}')">✕</button>
-            `;
 
             wrapper.appendChild(a);
-            wrapper.appendChild(actions);
 
             if (btn.desc) {
                 const descEl = document.createElement('div');
@@ -561,189 +265,6 @@
             }
             styleEl.textContent = css;
         }
-
-        // ============ 按钮操作 ============
-
-        let btnModalState = { mode: 'add', colId: null, btnId: null };
-
-        function openBtnModal(btnId, colId) {
-            btnModalState.colId = colId;
-            if (btnId) {
-                btnModalState.mode = 'edit';
-                btnModalState.btnId = btnId;
-                document.getElementById('btnModalTitle').textContent = '编辑按钮';
-                document.getElementById('btnModalConfirm').textContent = '保存';
-
-                const col = columns.find(c => c.id === colId);
-                const btn = col ? col.buttons.find(b => b.id === btnId) : null;
-                if (btn) {
-                    document.getElementById('btnNameInput').value = btn.name;
-                    document.getElementById('btnUrlInput').value = btn.url;
-                    document.getElementById('btnDescInput').value = btn.desc || '';
-                }
-            } else {
-                btnModalState.mode = 'add';
-                btnModalState.btnId = null;
-                document.getElementById('btnModalTitle').textContent = '添加按钮';
-                document.getElementById('btnModalConfirm').textContent = '添加';
-                document.getElementById('btnNameInput').value = '';
-                document.getElementById('btnUrlInput').value = '';
-                document.getElementById('btnDescInput').value = '';
-            }
-            document.getElementById('btnModalOverlay').classList.add('active');
-            document.getElementById('btnNameInput').focus();
-        }
-
-        function closeBtnModal() {
-            document.getElementById('btnModalOverlay').classList.remove('active');
-        }
-
-        function deleteBtn(colId, btnId) {
-            if (!confirm('确定删除这个按钮？')) return;
-            const col = columns.find(c => c.id === colId);
-            if (col) {
-                col.buttons = col.buttons.filter(b => b.id !== btnId);
-            }
-            renderAll();
-        }
-
-        document.getElementById('btnModalConfirm').addEventListener('click', () => {
-            const name = document.getElementById('btnNameInput').value.trim();
-            const url = document.getElementById('btnUrlInput').value.trim();
-            const desc = document.getElementById('btnDescInput').value.trim();
-
-            if (!name) { alert('请输入按钮名称'); return; }
-            if (!url) { alert('请输入链接地址'); return; }
-
-            const col = columns.find(c => c.id === btnModalState.colId);
-            if (!col) return;
-
-            if (btnModalState.mode === 'edit' && btnModalState.btnId) {
-                const btn = col.buttons.find(b => b.id === btnModalState.btnId);
-                if (btn) {
-                    btn.name = name;
-                    btn.url = url;
-                    btn.desc = desc;
-                }
-            } else {
-                col.buttons.push({
-                    id: genId(),
-                    name: name,
-                    url: url,
-                    desc: desc,
-                    integrated: false
-                });
-            }
-
-            closeBtnModal();
-            renderAll();
-        });
-
-        // 回车快捷提交
-        document.getElementById('btnNameInput').addEventListener('keydown', e => {
-            if (e.key === 'Enter') document.getElementById('btnModalConfirm').click();
-        });
-        document.getElementById('btnUrlInput').addEventListener('keydown', e => {
-            if (e.key === 'Enter') document.getElementById('btnModalConfirm').click();
-        });
-        document.getElementById('btnDescInput').addEventListener('keydown', e => {
-            if (e.key === 'Enter') document.getElementById('btnModalConfirm').click();
-        });
-
-        // 点击遮罩关闭
-        document.getElementById('btnModalOverlay').addEventListener('click', function(e) {
-            if (e.target === this) closeBtnModal();
-        });
-
-        // ============ 列操作 ============
-
-        let colModalState = { mode: 'add', colId: null, selectedColor: 0 };
-
-        function openColModal(colId) {
-            colModalState.colId = colId || null;
-            colModalState.mode = colId ? 'edit' : 'add';
-            colModalState.selectedColor = 0;
-
-            if (colId) {
-                document.getElementById('colModalTitle').textContent = '编辑列';
-                document.getElementById('colModalConfirm').textContent = '保存';
-                const col = columns.find(c => c.id === colId);
-                if (col) {
-                    document.getElementById('colNameInput').value = col.title;
-                    colModalState.selectedColor = col.colorIdx;
-                }
-            } else {
-                document.getElementById('colModalTitle').textContent = '新增列';
-                document.getElementById('colModalConfirm').textContent = '创建';
-                document.getElementById('colNameInput').value = '';
-                colModalState.selectedColor = columns.length % COLOR_SCHEMES.length;
-            }
-
-            renderColorDots();
-            document.getElementById('colModalOverlay').classList.add('active');
-            document.getElementById('colNameInput').focus();
-        }
-
-        function closeColModal() {
-            document.getElementById('colModalOverlay').classList.remove('active');
-        }
-
-        function editColumn(colId) {
-            openColModal(colId);
-        }
-
-        function deleteColumn(colId) {
-            if (!confirm('确定删除整列及其所有按钮？此操作不可撤销。')) return;
-            columns = columns.filter(c => c.id !== colId);
-            renderAll();
-        }
-
-        function renderColorDots() {
-            const container = document.getElementById('colorPresets');
-            container.innerHTML = '';
-            COLOR_SCHEMES.forEach((scheme, idx) => {
-                const dot = document.createElement('div');
-                dot.className = 'color-dot' + (idx === colModalState.selectedColor ? ' selected' : '');
-                dot.style.background = scheme.btnBg;
-                dot.title = scheme.name;
-                dot.onclick = () => {
-                    colModalState.selectedColor = idx;
-                    renderColorDots();
-                };
-                container.appendChild(dot);
-            });
-        }
-
-        document.getElementById('colModalConfirm').addEventListener('click', () => {
-            const title = document.getElementById('colNameInput').value.trim();
-            if (!title) { alert('请输入列名称'); return; }
-
-            if (colModalState.mode === 'edit' && colModalState.colId) {
-                const col = columns.find(c => c.id === colModalState.colId);
-                if (col) {
-                    col.title = title;
-                    col.colorIdx = colModalState.selectedColor;
-                }
-            } else {
-                columns.push({
-                    id: genId(),
-                    title: title,
-                    colorIdx: colModalState.selectedColor,
-                    buttons: []
-                });
-            }
-
-            closeColModal();
-            renderAll();
-        });
-
-        document.getElementById('colNameInput').addEventListener('keydown', e => {
-            if (e.key === 'Enter') document.getElementById('colModalConfirm').click();
-        });
-
-        document.getElementById('colModalOverlay').addEventListener('click', function(e) {
-            if (e.target === this) closeColModal();
-        });
 
         // ============ 初始渲染 ============
         renderAll();
